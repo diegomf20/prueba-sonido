@@ -4,11 +4,14 @@
 
 </head>
 <body>
-    <script src="sounds.js"></script>
+    <script src="https://code.createjs.com/1.0.0/soundjs.min.js"></script>
+
     <script>
+        var soundID="hi";
+        createjs.Sound.registerSound("alarma.mp3", soundID);
         setTimeout(() => {
-            playSound("alerta");
-        }, 3000);
+            createjs.Sound.play(soundID);
+        }, 4000);
     </script>
 </body>
 </html>
