@@ -4,11 +4,10 @@
 
 </head>
 <body>
+    <script src="sounds.js"></script>
     <script>
         setTimeout(() => {
-            var sound=new Audio();
-            sound.src="alarma.mp3";
-            sound.play();
+            playSound("alerta");
         }, 3000);
     </script>
 </body>
