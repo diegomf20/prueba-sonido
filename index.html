@@ -10,18 +10,30 @@
     </button>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script>
+        navigator.getUserMedia = navigator.getUserMedia ||
+                         navigator.mozGetUserMedia ||
+                         navigator.webkitGetUserMedia ||
+                         navigator.msGetUserMedia;
+      
+        navigator.getUserMedia({ audio: true}, function(mediaStream) {
+            /* usar el flujo de datos */
+            }, function(err) {
+  /* manejar el error */
+});
+        
         var soundID="hi";
         createjs.Sound.registerSound("alarma.mp3", soundID);
         function run(params) {
             createjs.Sound.play(soundID);   
         }
-        $('#hi').click(function (params) {
-            run();    
-        });
+        // $('#hi').click(function (params) {
+        //     run();    
+        // });
 setTimeout(() => {
-    $('#hi').click();
-    alert('hi');
-}, 5000);
+    // $('#hi').click();
+    // alert('hi');
+    run();
+}, 10000);
     </script>
 </body>
 </html>
